@@ -21,7 +21,6 @@ s_axi_wstrb,
 s_axi_wvalid,
 write_ready,
 __ILA_ILA_Slave_Write_acc_decode__,
-__ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__,
 __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__,
 __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__,
 __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__,
@@ -40,7 +39,7 @@ tx_awsize,
 tx_awaddr,
 tx_awburst
 );
-input      [5:0] __ILA_ILA_Slave_Write_grant__;
+input      [4:0] __ILA_ILA_Slave_Write_grant__;
 input            clk;
 input            rst;
 input            s_axi_aresetn;
@@ -61,8 +60,7 @@ input            s_axi_wlast;
 input      [3:0] s_axi_wstrb;
 input            s_axi_wvalid;
 input            write_ready;
-output      [5:0] __ILA_ILA_Slave_Write_acc_decode__;
-output            __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__;
+output      [4:0] __ILA_ILA_Slave_Write_acc_decode__;
 output            __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__;
 output            __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__;
 output            __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__;
@@ -80,25 +78,24 @@ output reg      [7:0] tx_awlen;
 output reg      [2:0] tx_awsize;
 output reg     [31:0] tx_awaddr;
 output reg      [1:0] tx_awburst;
-wire      [5:0] __ILA_ILA_Slave_Write_acc_decode__;
-wire            __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__;
+wire      [4:0] __ILA_ILA_Slave_Write_acc_decode__;
 wire            __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__;
 wire            __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__;
 wire            __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__;
 wire            __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__;
 wire            __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__;
-wire      [5:0] __ILA_ILA_Slave_Write_grant__;
+wire      [4:0] __ILA_ILA_Slave_Write_grant__;
 wire            __ILA_ILA_Slave_Write_valid__;
-wire     [11:0] bv_12_0_n62;
+wire     [11:0] bv_12_0_n59;
 wire            bv_1_0_n0;
 wire            bv_1_1_n5;
-wire      [1:0] bv_2_0_n63;
-wire      [1:0] bv_2_1_n124;
-wire     [29:0] bv_30_1_n129;
-wire     [31:0] bv_32_0_n121;
-wire      [2:0] bv_3_0_n116;
-wire      [7:0] bv_8_0_n104;
-wire      [7:0] bv_8_1_n108;
+wire      [1:0] bv_2_0_n60;
+wire      [1:0] bv_2_1_n153;
+wire     [29:0] bv_30_1_n158;
+wire     [31:0] bv_32_0_n150;
+wire      [2:0] bv_3_0_n145;
+wire      [7:0] bv_8_0_n133;
+wire      [7:0] bv_8_1_n137;
 wire            clk;
 wire            n1;
 wire            n10;
@@ -106,49 +103,78 @@ wire            n100;
 wire            n101;
 wire            n102;
 wire            n103;
+wire            n104;
 wire            n105;
-wire      [7:0] n106;
+wire            n106;
 wire            n107;
-wire      [7:0] n109;
+wire            n108;
+wire            n109;
 wire            n11;
-wire      [7:0] n110;
+wire            n110;
 wire            n111;
 wire            n112;
-wire      [7:0] n113;
-wire      [7:0] n114;
-wire      [7:0] n115;
+wire            n113;
+wire            n114;
+wire            n115;
+wire            n116;
 wire            n117;
-wire      [2:0] n118;
+wire            n118;
 wire            n119;
 wire            n12;
-wire      [2:0] n120;
+wire            n120;
+wire            n121;
 wire            n122;
-wire     [31:0] n123;
+wire            n123;
+wire            n124;
 wire            n125;
 wire            n126;
 wire            n127;
-wire     [29:0] n128;
+wire            n128;
+wire            n129;
 wire            n13;
-wire     [29:0] n130;
-wire     [31:0] n131;
-wire     [31:0] n132;
-wire            n133;
+wire            n130;
+wire            n131;
+wire            n132;
 wire            n134;
-wire            n135;
+wire      [7:0] n135;
 wire            n136;
-wire     [29:0] n137;
-wire     [29:0] n138;
-wire     [31:0] n139;
+wire      [7:0] n138;
+wire      [7:0] n139;
 wire            n14;
-wire     [31:0] n140;
-wire     [31:0] n141;
-wire            n142;
-wire      [1:0] n143;
-wire            n144;
-wire      [1:0] n145;
+wire            n140;
+wire            n141;
+wire      [7:0] n142;
+wire      [7:0] n143;
+wire      [7:0] n144;
+wire            n146;
+wire      [2:0] n147;
+wire            n148;
+wire      [2:0] n149;
 wire            n15;
+wire            n151;
+wire     [31:0] n152;
+wire            n154;
+wire            n155;
+wire            n156;
+wire     [29:0] n157;
+wire     [29:0] n159;
 wire            n16;
+wire     [31:0] n160;
+wire     [31:0] n161;
+wire            n162;
+wire            n163;
+wire            n164;
+wire            n165;
+wire     [29:0] n166;
+wire     [29:0] n167;
+wire     [31:0] n168;
+wire     [31:0] n169;
 wire            n17;
+wire     [31:0] n170;
+wire            n171;
+wire      [1:0] n172;
+wire            n173;
+wire      [1:0] n174;
 wire            n18;
 wire            n19;
 wire            n2;
@@ -193,19 +219,19 @@ wire            n55;
 wire            n56;
 wire            n57;
 wire            n58;
-wire            n59;
 wire            n6;
-wire            n60;
 wire            n61;
-wire            n64;
+wire            n62;
+wire            n63;
+wire      [1:0] n64;
 wire            n65;
 wire            n66;
-wire      [1:0] n67;
-wire            n68;
+wire            n67;
+wire      [1:0] n68;
 wire            n69;
 wire            n7;
 wire            n70;
-wire      [1:0] n71;
+wire            n71;
 wire            n72;
 wire            n73;
 wire            n74;
@@ -289,131 +315,158 @@ assign n21 =  ( s_axi_aresetn ) == ( bv_1_1_n5 )  ;
 assign n22 =  ( n20 ) & (n21 )  ;
 assign __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ = n22 ;
 assign __ILA_ILA_Slave_Write_acc_decode__[4] = __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ ;
-assign n23 =  ( s_axi_bready ) == ( bv_1_1_n5 )  ;
-assign n24 =  ( s_axi_aresetn ) == ( bv_1_1_n5 )  ;
+assign n23 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
+assign n24 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
 assign n25 =  ( n23 ) & (n24 )  ;
-assign __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__ = n25 ;
-assign __ILA_ILA_Slave_Write_acc_decode__[5] = __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__ ;
-assign n26 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
-assign n27 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
-assign n28 =  ( n26 ) & (n27 )  ;
-assign n29 =  ( n28 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
-assign n30 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n31 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
-assign n32 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
-assign n33 =  ( n31 ) & (n32 )  ;
-assign n34 =  ( n33 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
-assign n35 =  ( n30 ) ? ( bv_1_0_n0 ) : ( n34 ) ;
-assign n36 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
-assign n37 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
-assign n38 =  ( n36 ) & (n37 )  ;
-assign n39 =  ( n38 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
-assign n40 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n41 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
-assign n42 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
-assign n43 =  ( n41 ) & (n42 )  ;
-assign n44 =  ( n43 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
-assign n45 =  ( n40 ) ? ( bv_1_0_n0 ) : ( n44 ) ;
-assign n46 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
-assign n47 =  ( n46 ) ? ( write_ready ) : ( s_axi_wready ) ;
-assign n48 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
-assign n49 =  ( n48 ) ? ( write_ready ) : ( s_axi_wready ) ;
-assign n50 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n51 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n52 =  ( n51 ) ? ( bv_1_0_n0 ) : ( write_ready ) ;
-assign n53 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
-assign n54 =  ( n53 ) ? ( write_ready ) : ( s_axi_wready ) ;
-assign n55 =  ( n50 ) ? ( n52 ) : ( n54 ) ;
-assign n56 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n57 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n58 =  ( n57 ) ? ( bv_1_0_n0 ) : ( write_ready ) ;
-assign n59 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
-assign n60 =  ( n59 ) ? ( write_ready ) : ( s_axi_wready ) ;
-assign n61 =  ( n56 ) ? ( n58 ) : ( n60 ) ;
-assign bv_12_0_n62 = 12'h0 ;
-assign bv_2_0_n63 = 2'h0 ;
-assign n64 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n65 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n66 =  ( n64 ) & (n65 )  ;
-assign n67 =  ( n66 ) ? ( bv_2_0_n63 ) : ( s_axi_bresp ) ;
-assign n68 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n69 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n70 =  ( n68 ) & (n69 )  ;
-assign n71 =  ( n70 ) ? ( bv_2_0_n63 ) : ( s_axi_bresp ) ;
-assign n72 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n73 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n74 =  ( n72 ) & (n73 )  ;
-assign n75 =  ( n74 ) ? ( bv_1_1_n5 ) : ( s_axi_bvalid ) ;
-assign n76 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n77 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n26 =  ( n25 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
+assign n27 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n28 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
+assign n29 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n30 =  ( n28 ) & (n29 )  ;
+assign n31 =  ( n30 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
+assign n32 =  ( n27 ) ? ( bv_1_0_n0 ) : ( n31 ) ;
+assign n33 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
+assign n34 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n35 =  ( n33 ) & (n34 )  ;
+assign n36 =  ( n35 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
+assign n37 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n38 =  ( tx_wactive ) == ( bv_1_0_n0 )  ;
+assign n39 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n40 =  ( n38 ) & (n39 )  ;
+assign n41 =  ( n40 ) ? ( bv_1_1_n5 ) : ( bv_1_0_n0 ) ;
+assign n42 =  ( n37 ) ? ( bv_1_0_n0 ) : ( n41 ) ;
+assign n43 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
+assign n44 =  ( n43 ) ? ( write_ready ) : ( s_axi_wready ) ;
+assign n45 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
+assign n46 =  ( n45 ) ? ( write_ready ) : ( s_axi_wready ) ;
+assign n47 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n48 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n49 =  ( n48 ) ? ( bv_1_0_n0 ) : ( write_ready ) ;
+assign n50 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
+assign n51 =  ( n50 ) ? ( write_ready ) : ( s_axi_wready ) ;
+assign n52 =  ( n47 ) ? ( n49 ) : ( n51 ) ;
+assign n53 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n54 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n55 =  ( n54 ) ? ( bv_1_0_n0 ) : ( write_ready ) ;
+assign n56 =  ( tx_wactive ) == ( bv_1_1_n5 )  ;
+assign n57 =  ( n56 ) ? ( write_ready ) : ( s_axi_wready ) ;
+assign n58 =  ( n53 ) ? ( n55 ) : ( n57 ) ;
+assign bv_12_0_n59 = 12'h0 ;
+assign bv_2_0_n60 = 2'h0 ;
+assign n61 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n62 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n63 =  ( n61 ) & (n62 )  ;
+assign n64 =  ( n63 ) ? ( bv_2_0_n60 ) : ( s_axi_bresp ) ;
+assign n65 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n66 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n67 =  ( n65 ) & (n66 )  ;
+assign n68 =  ( n67 ) ? ( bv_2_0_n60 ) : ( s_axi_bresp ) ;
+assign n69 =  ( tx_bwait ) == ( bv_1_1_n5 )  ;
+assign n70 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
+assign n71 =  ( s_axi_bready ) == ( bv_1_1_n5 )  ;
+assign n72 =  ( n70 ) & (n71 )  ;
+assign n73 =  ( n69 ) & (n72 )  ;
+assign n74 =  ( n73 ) ? ( bv_1_0_n0 ) : ( s_axi_bvalid ) ;
+assign n75 =  ( tx_bwait ) == ( bv_1_1_n5 )  ;
+assign n76 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
+assign n77 =  ( s_axi_bready ) == ( bv_1_1_n5 )  ;
 assign n78 =  ( n76 ) & (n77 )  ;
-assign n79 =  ( n78 ) ? ( bv_1_1_n5 ) : ( s_axi_bvalid ) ;
-assign n80 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
-assign n81 =  ( n80 ) ? ( bv_1_0_n0 ) : ( s_axi_bvalid ) ;
-assign n82 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n83 =  ( n82 ) ? ( bv_1_1_n5 ) : ( tx_wactive ) ;
-assign n84 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n85 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n86 =  ( n84 ) & (n85 )  ;
-assign n87 =  ( n86 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
-assign n88 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n89 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n90 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n91 =  ( n89 ) & (n90 )  ;
-assign n92 =  ( n91 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
-assign n93 =  ( n88 ) ? ( bv_1_1_n5 ) : ( n92 ) ;
-assign n94 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n95 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n96 =  ( n94 ) & (n95 )  ;
-assign n97 =  ( n96 ) ? ( bv_1_1_n5 ) : ( tx_bwait ) ;
-assign n98 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
-assign n99 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n100 =  ( n98 ) & (n99 )  ;
-assign n101 =  ( n100 ) ? ( bv_1_1_n5 ) : ( tx_bwait ) ;
-assign n102 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
-assign n103 =  ( n102 ) ? ( bv_1_0_n0 ) : ( tx_bwait ) ;
-assign bv_8_0_n104 = 8'h0 ;
-assign n105 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n106 =  ( n105 ) ? ( s_axi_awlen ) : ( tx_awlen ) ;
-assign n107 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign bv_8_1_n108 = 8'h1 ;
-assign n109 =  ( tx_awlen ) - ( bv_8_1_n108 )  ;
-assign n110 =  ( n107 ) ? ( n109 ) : ( tx_awlen ) ;
-assign n111 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n112 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n113 =  ( tx_awlen ) - ( bv_8_1_n108 )  ;
-assign n114 =  ( n112 ) ? ( n113 ) : ( tx_awlen ) ;
-assign n115 =  ( n111 ) ? ( s_axi_awlen ) : ( n114 ) ;
-assign bv_3_0_n116 = 3'h0 ;
-assign n117 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n118 =  ( n117 ) ? ( s_axi_awsize ) : ( tx_awsize ) ;
-assign n119 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n120 =  ( n119 ) ? ( s_axi_awsize ) : ( tx_awsize ) ;
-assign bv_32_0_n121 = 32'h0 ;
-assign n122 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n123 =  ( n122 ) ? ( s_axi_awaddr ) : ( tx_awaddr ) ;
-assign bv_2_1_n124 = 2'h1 ;
-assign n125 =  ( tx_awburst ) == ( bv_2_1_n124 )  ;
-assign n126 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n127 =  ( n125 ) & (n126 )  ;
-assign n128 = tx_awaddr[31:2] ;
-assign bv_30_1_n129 = 30'h1 ;
-assign n130 =  ( n128 ) + ( bv_30_1_n129 )  ;
-assign n131 =  { ( n130 ) , ( bv_2_0_n63 ) }  ;
-assign n132 =  ( n127 ) ? ( n131 ) : ( tx_awaddr ) ;
-assign n133 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n134 =  ( tx_awburst ) == ( bv_2_1_n124 )  ;
-assign n135 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
-assign n136 =  ( n134 ) & (n135 )  ;
-assign n137 = tx_awaddr[31:2] ;
-assign n138 =  ( n137 ) + ( bv_30_1_n129 )  ;
-assign n139 =  { ( n138 ) , ( bv_2_0_n63 ) }  ;
-assign n140 =  ( n136 ) ? ( n139 ) : ( tx_awaddr ) ;
-assign n141 =  ( n133 ) ? ( s_axi_awaddr ) : ( n140 ) ;
-assign n142 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n143 =  ( n142 ) ? ( s_axi_awburst ) : ( tx_awburst ) ;
-assign n144 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
-assign n145 =  ( n144 ) ? ( s_axi_awburst ) : ( tx_awburst ) ;
+assign n79 =  ( n75 ) & (n78 )  ;
+assign n80 =  ( n79 ) ? ( bv_1_0_n0 ) : ( s_axi_bvalid ) ;
+assign n81 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n82 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n83 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n84 =  ( n82 ) & (n83 )  ;
+assign n85 =  ( n84 ) ? ( bv_1_1_n5 ) : ( s_axi_bvalid ) ;
+assign n86 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
+assign n87 =  ( s_axi_bready ) == ( bv_1_1_n5 )  ;
+assign n88 =  ( n86 ) & (n87 )  ;
+assign n89 =  ( n88 ) ? ( bv_1_0_n0 ) : ( s_axi_bvalid ) ;
+assign n90 =  ( n81 ) ? ( n85 ) : ( n89 ) ;
+assign n91 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n92 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n93 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n94 =  ( n92 ) & (n93 )  ;
+assign n95 =  ( n94 ) ? ( bv_1_1_n5 ) : ( s_axi_bvalid ) ;
+assign n96 =  ( s_axi_bvalid ) == ( bv_1_1_n5 )  ;
+assign n97 =  ( s_axi_bready ) == ( bv_1_1_n5 )  ;
+assign n98 =  ( n96 ) & (n97 )  ;
+assign n99 =  ( n98 ) ? ( bv_1_0_n0 ) : ( s_axi_bvalid ) ;
+assign n100 =  ( n91 ) ? ( n95 ) : ( n99 ) ;
+assign n101 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n102 =  ( n101 ) ? ( bv_1_1_n5 ) : ( tx_wactive ) ;
+assign n103 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n104 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n105 =  ( n103 ) & (n104 )  ;
+assign n106 =  ( n105 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
+assign n107 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n108 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n109 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n110 =  ( n108 ) & (n109 )  ;
+assign n111 =  ( n110 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
+assign n112 =  ( n107 ) ? ( bv_1_1_n5 ) : ( n111 ) ;
+assign n113 =  ( tx_bwait ) == ( bv_1_1_n5 )  ;
+assign n114 =  ( n113 ) & (n72 )  ;
+assign n115 =  ( n114 ) ? ( bv_1_0_n0 ) : ( tx_bwait ) ;
+assign n116 =  ( tx_bwait ) == ( bv_1_1_n5 )  ;
+assign n117 =  ( n116 ) & (n78 )  ;
+assign n118 =  ( n117 ) ? ( bv_1_0_n0 ) : ( tx_bwait ) ;
+assign n119 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n120 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n121 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n122 =  ( n120 ) & (n121 )  ;
+assign n123 =  ( n122 ) ? ( bv_1_1_n5 ) : ( tx_bwait ) ;
+assign n124 =  ( n88 ) ? ( bv_1_0_n0 ) : ( tx_bwait ) ;
+assign n125 =  ( n119 ) ? ( n123 ) : ( n124 ) ;
+assign n126 =  ( tx_bwait ) == ( bv_1_0_n0 )  ;
+assign n127 =  ( s_axi_wlast ) == ( bv_1_1_n5 )  ;
+assign n128 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n129 =  ( n127 ) & (n128 )  ;
+assign n130 =  ( n129 ) ? ( bv_1_1_n5 ) : ( tx_bwait ) ;
+assign n131 =  ( n98 ) ? ( bv_1_0_n0 ) : ( tx_bwait ) ;
+assign n132 =  ( n126 ) ? ( n130 ) : ( n131 ) ;
+assign bv_8_0_n133 = 8'h0 ;
+assign n134 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n135 =  ( n134 ) ? ( s_axi_awlen ) : ( tx_awlen ) ;
+assign n136 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign bv_8_1_n137 = 8'h1 ;
+assign n138 =  ( tx_awlen ) - ( bv_8_1_n137 )  ;
+assign n139 =  ( n136 ) ? ( n138 ) : ( tx_awlen ) ;
+assign n140 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n141 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n142 =  ( tx_awlen ) - ( bv_8_1_n137 )  ;
+assign n143 =  ( n141 ) ? ( n142 ) : ( tx_awlen ) ;
+assign n144 =  ( n140 ) ? ( s_axi_awlen ) : ( n143 ) ;
+assign bv_3_0_n145 = 3'h0 ;
+assign n146 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n147 =  ( n146 ) ? ( s_axi_awsize ) : ( tx_awsize ) ;
+assign n148 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n149 =  ( n148 ) ? ( s_axi_awsize ) : ( tx_awsize ) ;
+assign bv_32_0_n150 = 32'h0 ;
+assign n151 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n152 =  ( n151 ) ? ( s_axi_awaddr ) : ( tx_awaddr ) ;
+assign bv_2_1_n153 = 2'h1 ;
+assign n154 =  ( tx_awburst ) == ( bv_2_1_n153 )  ;
+assign n155 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n156 =  ( n154 ) & (n155 )  ;
+assign n157 = tx_awaddr[31:2] ;
+assign bv_30_1_n158 = 30'h1 ;
+assign n159 =  ( n157 ) + ( bv_30_1_n158 )  ;
+assign n160 =  { ( n159 ) , ( bv_2_0_n60 ) }  ;
+assign n161 =  ( n156 ) ? ( n160 ) : ( tx_awaddr ) ;
+assign n162 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n163 =  ( tx_awburst ) == ( bv_2_1_n153 )  ;
+assign n164 =  ( s_axi_wready ) == ( bv_1_1_n5 )  ;
+assign n165 =  ( n163 ) & (n164 )  ;
+assign n166 = tx_awaddr[31:2] ;
+assign n167 =  ( n166 ) + ( bv_30_1_n158 )  ;
+assign n168 =  { ( n167 ) , ( bv_2_0_n60 ) }  ;
+assign n169 =  ( n165 ) ? ( n168 ) : ( tx_awaddr ) ;
+assign n170 =  ( n162 ) ? ( s_axi_awaddr ) : ( n169 ) ;
+assign n171 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n172 =  ( n171 ) ? ( s_axi_awburst ) : ( tx_awburst ) ;
+assign n173 =  ( s_axi_awready ) == ( bv_1_1_n5 )  ;
+assign n174 =  ( n173 ) ? ( s_axi_awburst ) : ( tx_awburst ) ;
 always @(posedge clk) begin
    if(rst) begin
    end
@@ -421,91 +474,95 @@ always @(posedge clk) begin
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
            s_axi_awready <= bv_1_1_n5;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__ && __ILA_ILA_Slave_Write_grant__[1] ) begin
-           s_axi_awready <= n29;
+           s_axi_awready <= n26;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           s_axi_awready <= n35;
+           s_axi_awready <= n32;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           s_axi_awready <= n39;
+           s_axi_awready <= n36;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           s_axi_awready <= n45;
+           s_axi_awready <= n42;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__ && __ILA_ILA_Slave_Write_grant__[1] ) begin
-           s_axi_wready <= n47;
+           s_axi_wready <= n44;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           s_axi_wready <= n49;
+           s_axi_wready <= n46;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           s_axi_wready <= n55;
+           s_axi_wready <= n52;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           s_axi_wready <= n61;
+           s_axi_wready <= n58;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           s_axi_bid <= bv_12_0_n62;
+           s_axi_bid <= bv_12_0_n59;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           s_axi_bresp <= bv_2_0_n63;
+           s_axi_bresp <= bv_2_0_n60;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           s_axi_bresp <= n67;
+           s_axi_bresp <= n64;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           s_axi_bresp <= n71;
+           s_axi_bresp <= n68;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
            s_axi_bvalid <= bv_1_0_n0;
+       end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__ && __ILA_ILA_Slave_Write_grant__[1] ) begin
+           s_axi_bvalid <= n74;
+       end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
+           s_axi_bvalid <= n80;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           s_axi_bvalid <= n75;
+           s_axi_bvalid <= n90;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           s_axi_bvalid <= n79;
-       end else if ( __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__ && __ILA_ILA_Slave_Write_grant__[5] ) begin
-           s_axi_bvalid <= n81;
+           s_axi_bvalid <= n100;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
            tx_wactive <= bv_1_0_n0;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           tx_wactive <= n83;
+           tx_wactive <= n102;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           tx_wactive <= n87;
+           tx_wactive <= n106;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_wactive <= n93;
+           tx_wactive <= n112;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
            tx_bwait <= bv_1_0_n0;
+       end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Wait__ && __ILA_ILA_Slave_Write_grant__[1] ) begin
+           tx_bwait <= n115;
+       end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
+           tx_bwait <= n118;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           tx_bwait <= n97;
+           tx_bwait <= n125;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_bwait <= n101;
-       end else if ( __ILA_ILA_Slave_Write_decode_of_B_Slave_Ready__ && __ILA_ILA_Slave_Write_grant__[5] ) begin
-           tx_bwait <= n103;
+           tx_bwait <= n132;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           tx_awlen <= bv_8_0_n104;
+           tx_awlen <= bv_8_0_n133;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           tx_awlen <= n106;
+           tx_awlen <= n135;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           tx_awlen <= n110;
+           tx_awlen <= n139;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_awlen <= n115;
+           tx_awlen <= n144;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           tx_awsize <= bv_3_0_n116;
+           tx_awsize <= bv_3_0_n145;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           tx_awsize <= n118;
+           tx_awsize <= n147;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_awsize <= n120;
+           tx_awsize <= n149;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           tx_awaddr <= bv_32_0_n121;
+           tx_awaddr <= bv_32_0_n150;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           tx_awaddr <= n123;
+           tx_awaddr <= n152;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Valid__ && __ILA_ILA_Slave_Write_grant__[3] ) begin
-           tx_awaddr <= n132;
+           tx_awaddr <= n161;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_awaddr <= n141;
+           tx_awaddr <= n170;
        end
        if ( __ILA_ILA_Slave_Write_decode_of_Slave_W_Reset__ && __ILA_ILA_Slave_Write_grant__[0] ) begin
-           tx_awburst <= bv_2_0_n63;
+           tx_awburst <= bv_2_0_n60;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AW_Valid__ && __ILA_ILA_Slave_Write_grant__[2] ) begin
-           tx_awburst <= n143;
+           tx_awburst <= n172;
        end else if ( __ILA_ILA_Slave_Write_decode_of_Slave_AWW_Valid__ && __ILA_ILA_Slave_Write_grant__[4] ) begin
-           tx_awburst <= n145;
+           tx_awburst <= n174;
        end
    end
 end
