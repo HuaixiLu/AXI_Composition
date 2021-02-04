@@ -37,7 +37,7 @@ module Write_Channel #(parameter IDW =  12, // ID
    output            axi_bready  // master can accept write response.
    );
                         
-    ILA_Master_write m_w (
+    ILA_Master_Write m_w (
         .__ILA_ILA_Master_write_grant__ (8'b11111111),
         .awaddr     (awaddr_in),
         .awburst    (awburst_in),
@@ -80,7 +80,7 @@ module Write_Channel #(parameter IDW =  12, // ID
         .tx_awlen ()
    );
 
-ILA_Slave_write s_w(
+ILA_Slave_Write s_w(
         .__ILA_ILA_Slave_write_grant__ (6'b111111),
         .clk    (clk),
         .rst    (1'b0),
