@@ -373,6 +373,8 @@ always @(posedge clk) begin
            m_axi_wvalid <= n65;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
            m_axi_wvalid <= bv_1_1_n2;
+       end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Ready__ && __ILA_ILA_Master_Write_grant__[6] ) begin
+           m_axi_wvalid <= bv_1_0_n0;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_B_Ready__ && __ILA_ILA_Master_Write_grant__[7] ) begin
            m_axi_bready <= bready;
