@@ -112,8 +112,8 @@ wire      [2:0] awsize;
 wire            bready;
 wire            bv_1_0_n0;
 wire            bv_1_1_n2;
-wire      [7:0] bv_8_0_n48;
-wire      [7:0] bv_8_1_n57;
+wire      [7:0] bv_8_0_n46;
+wire      [7:0] bv_8_1_n55;
 wire            clk;
 wire            m_axi_aresetn;
 wire            m_axi_awready;
@@ -157,11 +157,11 @@ wire            n4;
 wire            n40;
 wire      [1:0] n41;
 wire            n42;
-wire            n43;
+wire     [63:0] n43;
 wire            n44;
-wire     [63:0] n45;
-wire            n46;
-wire      [7:0] n47;
+wire      [7:0] n45;
+wire            n47;
+wire            n48;
 wire            n49;
 wire            n5;
 wire            n50;
@@ -169,8 +169,8 @@ wire            n51;
 wire            n52;
 wire            n53;
 wire            n54;
-wire            n55;
 wire            n56;
+wire            n57;
 wire            n58;
 wire            n59;
 wire            n6;
@@ -194,18 +194,16 @@ wire            n75;
 wire            n76;
 wire            n77;
 wire            n78;
-wire            n79;
+wire      [7:0] n79;
 wire            n8;
 wire            n80;
 wire      [7:0] n81;
 wire            n82;
 wire      [7:0] n83;
-wire            n84;
-wire      [7:0] n85;
+wire      [7:0] n84;
+wire            n85;
 wire      [7:0] n86;
-wire            n87;
-wire      [7:0] n88;
-wire      [7:0] n89;
+wire      [7:0] n87;
 wire            n9;
 wire            rst;
 wire     [63:0] wdata;
@@ -271,54 +269,52 @@ assign n38 =  ( m_axi_awvalid ) == ( bv_1_0_n0 )  ;
 assign n39 =  ( n38 ) ? ( awsize ) : ( m_axi_awsize ) ;
 assign n40 =  ( m_axi_awvalid ) == ( bv_1_0_n0 )  ;
 assign n41 =  ( n40 ) ? ( awburst ) : ( m_axi_awburst ) ;
-assign n42 =  ( m_axi_awvalid ) == ( bv_1_0_n0 )  ;
-assign n43 =  ( n42 ) ? ( bv_1_1_n2 ) : ( bv_1_0_n0 ) ;
+assign n42 =  ( m_axi_wvalid ) == ( bv_1_0_n0 )  ;
+assign n43 =  ( n42 ) ? ( wdata ) : ( m_axi_wdata ) ;
 assign n44 =  ( m_axi_wvalid ) == ( bv_1_0_n0 )  ;
-assign n45 =  ( n44 ) ? ( wdata ) : ( m_axi_wdata ) ;
-assign n46 =  ( m_axi_wvalid ) == ( bv_1_0_n0 )  ;
-assign n47 =  ( n46 ) ? ( wstrb ) : ( m_axi_wstrb ) ;
-assign bv_8_0_n48 = 8'h0 ;
-assign n49 =  ( m_axi_awlen ) == ( bv_8_0_n48 )  ;
-assign n50 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
-assign n51 =  ( n49 ) & (n50 )  ;
-assign n52 =  ( n51 ) ? ( bv_1_1_n2 ) : ( bv_1_0_n0 ) ;
-assign n53 =  ( m_axi_awlen ) == ( bv_8_0_n48 )  ;
-assign n54 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
-assign n55 =  ( n53 ) & (n54 )  ;
-assign n56 =  ( n55 ) ? ( bv_1_1_n2 ) : ( bv_1_0_n0 ) ;
-assign bv_8_1_n57 = 8'h1 ;
-assign n58 =  ( tx_awlen ) == ( bv_8_1_n57 )  ;
-assign n59 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n60 =  ( n58 ) & (n59 )  ;
-assign n61 =  ( n60 ) ? ( bv_1_1_n2 ) : ( m_axi_wlast ) ;
-assign n62 =  ( tx_awlen ) == ( bv_8_1_n57 )  ;
-assign n63 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n64 =  ( n62 ) & (n63 )  ;
-assign n65 =  ( n64 ) ? ( bv_1_1_n2 ) : ( m_axi_wlast ) ;
-assign n66 =  ( m_axi_wvalid ) == ( bv_1_0_n0 )  ;
-assign n67 =  ( n66 ) ? ( bv_1_1_n2 ) : ( m_axi_wvalid ) ;
+assign n45 =  ( n44 ) ? ( wstrb ) : ( m_axi_wstrb ) ;
+assign bv_8_0_n46 = 8'h0 ;
+assign n47 =  ( m_axi_awlen ) == ( bv_8_0_n46 )  ;
+assign n48 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
+assign n49 =  ( n47 ) & (n48 )  ;
+assign n50 =  ( n49 ) ? ( bv_1_1_n2 ) : ( bv_1_0_n0 ) ;
+assign n51 =  ( m_axi_awlen ) == ( bv_8_0_n46 )  ;
+assign n52 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
+assign n53 =  ( n51 ) & (n52 )  ;
+assign n54 =  ( n53 ) ? ( bv_1_1_n2 ) : ( bv_1_0_n0 ) ;
+assign bv_8_1_n55 = 8'h1 ;
+assign n56 =  ( tx_awlen ) == ( bv_8_1_n55 )  ;
+assign n57 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n58 =  ( n56 ) & (n57 )  ;
+assign n59 =  ( n58 ) ? ( bv_1_1_n2 ) : ( m_axi_wlast ) ;
+assign n60 =  ( tx_awlen ) == ( bv_8_1_n55 )  ;
+assign n61 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n62 =  ( n60 ) & (n61 )  ;
+assign n63 =  ( n62 ) ? ( bv_1_1_n2 ) : ( m_axi_wlast ) ;
+assign n64 =  ( m_axi_wvalid ) == ( bv_1_0_n0 )  ;
+assign n65 =  ( n64 ) ? ( bv_1_1_n2 ) : ( m_axi_wvalid ) ;
+assign n66 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
+assign n67 =  ( n66 ) ? ( bv_1_1_n2 ) : ( tx_wactive ) ;
 assign n68 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
 assign n69 =  ( n68 ) ? ( bv_1_1_n2 ) : ( tx_wactive ) ;
-assign n70 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
-assign n71 =  ( n70 ) ? ( bv_1_1_n2 ) : ( tx_wactive ) ;
-assign n72 =  ( tx_awlen ) == ( bv_8_1_n57 )  ;
-assign n73 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n74 =  ( n72 ) & (n73 )  ;
-assign n75 =  ( n74 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
-assign n76 =  ( tx_awlen ) == ( bv_8_1_n57 )  ;
-assign n77 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n78 =  ( n76 ) & (n77 )  ;
-assign n79 =  ( n78 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
+assign n70 =  ( tx_awlen ) == ( bv_8_1_n55 )  ;
+assign n71 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n72 =  ( n70 ) & (n71 )  ;
+assign n73 =  ( n72 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
+assign n74 =  ( tx_awlen ) == ( bv_8_1_n55 )  ;
+assign n75 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n76 =  ( n74 ) & (n75 )  ;
+assign n77 =  ( n76 ) ? ( bv_1_0_n0 ) : ( tx_wactive ) ;
+assign n78 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
+assign n79 =  ( n78 ) ? ( m_axi_awlen ) : ( tx_awlen ) ;
 assign n80 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
 assign n81 =  ( n80 ) ? ( m_axi_awlen ) : ( tx_awlen ) ;
-assign n82 =  ( m_axi_awvalid ) == ( bv_1_1_n2 )  ;
-assign n83 =  ( n82 ) ? ( m_axi_awlen ) : ( tx_awlen ) ;
-assign n84 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n85 =  ( tx_awlen ) - ( bv_8_1_n57 )  ;
-assign n86 =  ( n84 ) ? ( n85 ) : ( tx_awlen ) ;
-assign n87 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
-assign n88 =  ( tx_awlen ) - ( bv_8_1_n57 )  ;
-assign n89 =  ( n87 ) ? ( n88 ) : ( tx_awlen ) ;
+assign n82 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n83 =  ( tx_awlen ) - ( bv_8_1_n55 )  ;
+assign n84 =  ( n82 ) ? ( n83 ) : ( tx_awlen ) ;
+assign n85 =  ( m_axi_wvalid ) == ( bv_1_1_n2 )  ;
+assign n86 =  ( tx_awlen ) - ( bv_8_1_n55 )  ;
+assign n87 =  ( n85 ) ? ( n86 ) : ( tx_awlen ) ;
 always @(posedge clk) begin
    if(rst) begin
    end
@@ -346,35 +342,35 @@ always @(posedge clk) begin
        if ( __ILA_ILA_Master_Write_decode_of_Master_W_Reset__ && __ILA_ILA_Master_Write_grant__[0] ) begin
            m_axi_awvalid <= bv_1_0_n0;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_New__ && __ILA_ILA_Master_Write_grant__[1] ) begin
-           m_axi_awvalid <= n43;
+           m_axi_awvalid <= bv_1_1_n2;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Update__ && __ILA_ILA_Master_Write_grant__[2] ) begin
            m_axi_awvalid <= bv_1_1_n2;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Ready__ && __ILA_ILA_Master_Write_grant__[3] ) begin
            m_axi_awvalid <= bv_1_0_n0;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_W_New__ && __ILA_ILA_Master_Write_grant__[4] ) begin
-           m_axi_wdata <= n45;
+           m_axi_wdata <= n43;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
            m_axi_wdata <= wdata;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_W_New__ && __ILA_ILA_Master_Write_grant__[4] ) begin
-           m_axi_wstrb <= n47;
+           m_axi_wstrb <= n45;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
            m_axi_wstrb <= wstrb;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Update__ && __ILA_ILA_Master_Write_grant__[2] ) begin
-           m_axi_wlast <= n52;
+           m_axi_wlast <= n50;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Ready__ && __ILA_ILA_Master_Write_grant__[3] ) begin
-           m_axi_wlast <= n56;
+           m_axi_wlast <= n54;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
-           m_axi_wlast <= n61;
+           m_axi_wlast <= n59;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Ready__ && __ILA_ILA_Master_Write_grant__[6] ) begin
-           m_axi_wlast <= n65;
+           m_axi_wlast <= n63;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_W_Reset__ && __ILA_ILA_Master_Write_grant__[0] ) begin
            m_axi_wvalid <= bv_1_0_n0;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_New__ && __ILA_ILA_Master_Write_grant__[4] ) begin
-           m_axi_wvalid <= n67;
+           m_axi_wvalid <= n65;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
            m_axi_wvalid <= bv_1_1_n2;
        end
@@ -382,22 +378,22 @@ always @(posedge clk) begin
            m_axi_bready <= bready;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Update__ && __ILA_ILA_Master_Write_grant__[2] ) begin
-           tx_wactive <= n69;
+           tx_wactive <= n67;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Ready__ && __ILA_ILA_Master_Write_grant__[3] ) begin
-           tx_wactive <= n71;
+           tx_wactive <= n69;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
-           tx_wactive <= n75;
+           tx_wactive <= n73;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Ready__ && __ILA_ILA_Master_Write_grant__[6] ) begin
-           tx_wactive <= n79;
+           tx_wactive <= n77;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Update__ && __ILA_ILA_Master_Write_grant__[2] ) begin
-           tx_awlen <= n81;
+           tx_awlen <= n79;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Ready__ && __ILA_ILA_Master_Write_grant__[3] ) begin
-           tx_awlen <= n83;
+           tx_awlen <= n81;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Update__ && __ILA_ILA_Master_Write_grant__[5] ) begin
-           tx_awlen <= n86;
+           tx_awlen <= n84;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_W_Ready__ && __ILA_ILA_Master_Write_grant__[6] ) begin
-           tx_awlen <= n89;
+           tx_awlen <= n87;
        end
    end
 end
