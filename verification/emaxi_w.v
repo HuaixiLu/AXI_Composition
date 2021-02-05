@@ -349,6 +349,8 @@ always @(posedge clk) begin
            m_axi_awvalid <= n43;
        end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Update__ && __ILA_ILA_Master_Write_grant__[2] ) begin
            m_axi_awvalid <= bv_1_1_n2;
+       end else if ( __ILA_ILA_Master_Write_decode_of_Master_AW_Ready__ && __ILA_ILA_Master_Write_grant__[3] ) begin
+           m_axi_awvalid <= bv_1_0_n0;
        end
        if ( __ILA_ILA_Master_Write_decode_of_Master_W_New__ && __ILA_ILA_Master_Write_grant__[4] ) begin
            m_axi_wdata <= n45;
