@@ -1,0 +1,16 @@
+[GENERAL]
+model_files:wrapper.v[wrapper],rst.ets
+assume_if_true: True
+abstract_clock: True
+[DEFAULT]
+bmc_length: 6
+precondition: reset_done = 1_1
+
+[variable_map_assert]
+description:"variable_map_assert"
+properties:(variable_map_assert__p23__ = 1_1) & (variable_map_assert__p25__ = 1_1) & (variable_map_assert__p27__ = 1_1) & (variable_map_assert__p29__ = 1_1) & (variable_map_assert__p31__ = 1_1) & (variable_map_assert__p32__ = 1_1) & (variable_map_assert__p34__ = 1_1) & (variable_map_assert__p36__ = 1_1) & (variable_map_assert__p38__ = 1_1)
+assumptions:(noreset__m0__ = 1_1) & (variable_map_assume___m2__ = 1_1) & (variable_map_assume___m4__ = 1_1) & (variable_map_assume___m6__ = 1_1) & (variable_map_assume___m8__ = 1_1) & (variable_map_assume___m10__ = 1_1) & (variable_map_assume___m12__ = 1_1) & (variable_map_assume___m14__ = 1_1) & (variable_map_assume___m15__ = 1_1) & (variable_map_assume___m17__ = 1_1) & (variable_map_assume___m19__ = 1_1) & (variable_map_assume___m21__ = 1_1) & (invariant_assume__m39__ = 1_1) & (invariant_assume__m40__ = 1_1) & (invariant_assume__m41__ = 1_1) & (additional_mapping_control_assume__m42__ = 1_1) & (additional_mapping_control_assume__m43__ = 1_1) & (issue_decode__m44__ = 1_1) & (issue_valid__m45__ = 1_1)
+prove: True
+verification: safety
+strategy: ALL
+expected: True
