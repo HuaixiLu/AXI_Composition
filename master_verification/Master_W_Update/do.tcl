@@ -34,8 +34,8 @@ assume -name variable_map_assume_16 {(~ __START__ )|| (__m15__)}
 assume -name variable_map_assume_17 {(~ __START__ )|| (`true)}
 assume -name variable_map_assume_18 {(~ __START__ )|| (`true)}
 assume -name variable_map_assume_19 {(~ __START__ )|| (`true)}
-assume -name additional_mapping_control_assume20 {__ILA_I_write_addr_valid == (m1.wr_access || m1.awvalid_b)}
-assume -name additional_mapping_control_assume21 {__ILA_I_write_valid == (m1.wr_access || m1.wvalid_b)}
+assume -name additional_mapping_control_assume20 {__ILA_I_write_addr_valid == (m1.awvalid_in || m1.awvalid_b)}
+assume -name additional_mapping_control_assume21 {__ILA_I_write_valid == (m1.awvalid_in || m1.wvalid_b)}
 assume -name additional_mapping_control_assume22 {__ILA_I_awlen == (m1.awvalid_b ? m1.awlen_b : 8'b0)}
 assume -name additional_mapping_control_assume23 {__ILA_I_awaddr == (m1.awvalid_b ? m1.awaddr_b : m1.wr_dstaddr[31:0])}
 assume -name additional_mapping_control_assume24 {__ILA_I_awsize == (m1.awvalid_b ? m1.awsize_b : { 1'b0, m1.wr_datamode[1:0] })}
